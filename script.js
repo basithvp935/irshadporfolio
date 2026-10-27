@@ -2,7 +2,7 @@ const $=s=>document.querySelector(s);
 $('#burger').onclick=()=>$('#nav').classList.toggle('open');
 document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>$('#nav').classList.remove('open'));
 $('#theme2').onclick=()=>$('#theme').click();$('#theme').onclick=()=>{const r=document.documentElement,d=matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=(r.dataset.theme||(d?'dark':'light'))==='dark'?'light':'dark'};
-const W=['Brutalist minimalism.','Lush, living facades.','Photorealistic 3D visuals.','Buildable working drawings.'];let w=0,c=0,d=false;const t=$('#typed');
+const W=['Client-facing software delivery.','Milestone & timeline tracking.','Cross-functional team alignment.','QA testing & release management.','Enterprise IT operations & support.'];let w=0,c=0,d=false;const t=$('#typed');
 (function k(){const s=W[w];t.textContent=s.slice(0,c);if(!d&&c<s.length){c++;setTimeout(k,70)}else if(!d){d=true;setTimeout(k,1400)}else if(c>0){c--;setTimeout(k,35)}else{d=false;w=(w+1)%W.length;setTimeout(k,300)}})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');e.target.querySelectorAll('[data-n]').forEach(n=>{const to=+n.dataset.n;let v=0;const i=setInterval(()=>{n.textContent=++v;if(v>=to)clearInterval(i)},250)});io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
@@ -14,7 +14,6 @@ addEventListener('load',()=>setTimeout(()=>$('#pre').classList.add('h'),700));
 addEventListener('mousemove',e=>{$('#cur').style.transform=`translate(${e.clientX}px,${e.clientY}px)`;const a=$('#art svg');if(a&&scrollY<700)a.style.transform=`translate(${(e.clientX/innerWidth-.5)*-14}px,${(e.clientY/innerHeight-.5)*-10}px) scale(1.04)`});
 document.querySelectorAll('.card,.proj').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
 for(let i=0;i<14;i++){const l=document.createElement('span');l.className='lf';l.style.cssText=`left:${Math.random()*100}%;animation-duration:${9+Math.random()*10}s;animation-delay:${-Math.random()*15}s;transform:scale(${.6+Math.random()})`;$('#home').appendChild(l)}
-document.querySelectorAll('.ov,.art').forEach(box=>{const b=document.createElement('label');b.className='ph';b.innerHTML='📷 Add your photo<input type="file" accept="image/*" hidden>';box.appendChild(b);b.querySelector('input').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.src=URL.createObjectURL(f);im.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1';box.insertBefore(im,b)}});
 document.querySelectorAll('.card,.job,.proj').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
 if(matchMedia('(hover:none)').matches)document.querySelectorAll('.lf').forEach((l,i)=>i>5&&l.remove());
 ['#services','#projects','#process'].forEach(id=>{const r=document.querySelector(id+' .row');if(r){const h=document.createElement('div');h.className='swipe';h.textContent='Swipe to explore →';r.before(h)}});
@@ -29,7 +28,7 @@ document.querySelectorAll('h2').forEach(h=>{n=0;h.innerHTML=[...h.childNodes].ma
 const hio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on-h');hio.unobserve(e.target)}}),{threshold:.3});document.querySelectorAll('h2').forEach(h=>hio.observe(h));
 document.querySelectorAll('.row.rv').forEach(r=>[...r.children].forEach((c,i)=>c.style.setProperty('--i',i)));
 // ghost labels
-const G={about:'Profile',services:'Services',projects:'Focus',process:'Process',experience:'Career',skills:'Skills',education:'Study'};
+const G={about:'Summary',services:'Capabilities',projects:'Deliveries',process:'Method',experience:'Career',skills:'Skills',education:'Education',contact:'Contact'};
 Object.entries(G).forEach(([id,t])=>{const s=document.getElementById(id);if(s){const g=document.createElement('div');g.className='ghost';g.textContent=t;s.prepend(g)}});
 // timeline bar
 const tl=document.querySelector('.tl'),bar=document.createElement('div');bar.className='tlp';tl.prepend(bar);

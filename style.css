@@ -98,7 +98,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;opa
 .sun{transform-box:fill-box;transform-origin:center;animation:pu 5s ease-in-out infinite}@keyframes pu{50%{transform:scale(1.08);opacity:.85}}
 .win{animation:wg 4s ease-in-out infinite}@keyframes wg{50%{opacity:.7}}
 .rp{animation:rp 3s ease-in-out infinite}.r2{animation-delay:-1s}.r3{animation-delay:-2s}@keyframes rp{50%{transform:translateX(14px);opacity:.2}}
-.lf{position:absolute;bottom:-20px;width:9px;height:15px;border-radius:0 100% 0 100%;background:var(--sage);opacity:.45;animation:lf linear infinite;pointer-events:none}
+.lf{position:absolute;bottom:-20px;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.4;box-shadow:0 0 8px var(--gold);animation:lf linear infinite;pointer-events:none}
 @keyframes lf{to{transform:translateY(-110vh) rotate(420deg)}}
 .btn.fill{position:relative;overflow:hidden}.btn.fill:after{content:"";position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:sh 3.5s infinite}@keyframes sh{to{left:170%}}
 .ov{position:relative}.ov:before{content:"";position:absolute;inset:0;background:var(--gold);z-index:2;transform-origin:right;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}.rv.on .ov:before{transform:scaleX(0)}
